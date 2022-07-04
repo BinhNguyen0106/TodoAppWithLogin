@@ -2,6 +2,7 @@ package org.firebase.commons;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -18,7 +19,7 @@ public class Common {
     private Select select;
     private JavascriptExecutor jsExecutor;
     private Actions action;
-    private final Duration longTimeout = Duration.ofSeconds(30);
+    private final Duration longTimeout = Constant.LONG_TIMEOUT;
 
     public void launchBrowser(){
         System.out.println("Pre-condition - launchBrowser");

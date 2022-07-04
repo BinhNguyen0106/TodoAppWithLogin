@@ -41,7 +41,7 @@ public class TotoListTest {
 
     @AfterTest
     public void AfterTest(){
-        //common.closeBrowser();
+        common.closeBrowser();
     }
 
 }

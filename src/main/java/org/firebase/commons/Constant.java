@@ -6,6 +6,7 @@ import java.time.Duration;
 
 public class Constant {
     public static WebDriver driver;
+    public static WebDriver secondDriver;
     public static String PROJECT_PATH = System.getProperty("user.dir");
     public static final String TEST_URL = "https://todo-list-login.firebaseapp.com/#!/";
     public static final String USERNAME = "BinhNguyen0106";
