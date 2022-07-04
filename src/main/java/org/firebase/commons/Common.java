@@ -89,7 +89,6 @@ public class Common {
     }
 
     public void switchToWindowByID(String parentID){
-        //chỉ sử dụng trường hợp có 2 cửa sổ, >2 chạy ko đúng
         Set<String> allWindows = Constant.driver.getWindowHandles();
         for(String runWindow: allWindows){
             if(!runWindow.equals(parentID)){
@@ -115,7 +114,7 @@ public class Common {
         for(String runWindows: allWindows){
             if(!runWindows.equals(parentID)){
                 Constant.driver.switchTo().window(runWindows);
-                Constant.driver.close();//đóng tab hiện tại, không đóng toàn bộ browser
+                Constant.driver.close();
             }
         }
         Constant.driver.switchTo().window(parentID);
@@ -308,16 +307,13 @@ public class Common {
         // Get all new opened window.
         Set<String> windows = Constant.driver.getWindowHandles();
 
-        //Set là một Collection không thể chứa các phần tử trùng lặp.
-        //Cách duyệt từng phần tử không trùng lặp trong Collection (Set)
         for(String window : windows){
             System.out.println(window);
             if (!MainWindow.equalsIgnoreCase(window)) {
-                //So sánh nếu thằng nào khác thằng Chính (đầu tiên) thì chuyển hướng qua nó mới thao tác được
                 //Switch to Child window
                 Constant.driver.switchTo().window(window);
 
-                System.out.println("Đã chuyển đến lớp Window con");
+                System.out.println("Moved to child window");
                 //Constant.driver.close();
             }
         }
